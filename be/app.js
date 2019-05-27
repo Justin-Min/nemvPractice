@@ -39,7 +39,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-// hello world!
-// hi
-// hi2
-// hehehe
