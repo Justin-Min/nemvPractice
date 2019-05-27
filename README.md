@@ -1,2 +1,2 @@
 # nemvPractice
-Nodejs Express MongDB Vue Vuetify
+Practicing Nodejs Express MongDB Vue-Vuetify
