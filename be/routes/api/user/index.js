@@ -6,12 +6,12 @@ const User = require('../../../models/users');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   User.find()
-    .then(r => {
-      res.send({ success: true, users: r })
-    })
-    .catch(e => {
-      res.send({ success: false })
-    })
+  .then(r => {
+    res.send({ success: true, users: r })
+  })
+  .catch(e => {
+    res.send({ success: false })
+  })
 })
 
 router.post('/', (req, res, next) => {
