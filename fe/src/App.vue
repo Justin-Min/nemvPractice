@@ -103,7 +103,8 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      // title: 'Vuetify.js',
+      title: this.$apiRootPath
     }
   }
 }
