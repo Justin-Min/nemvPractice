@@ -81,7 +81,7 @@ export default {
       fixed: false,
       items: [{
         icon: 'home',
-        title: 'Home',
+        title: 'Changed_Home',
         to: {
           path: '/'
         }
