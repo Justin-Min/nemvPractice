@@ -29,19 +29,22 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  
   // render the error page
   res.status(err.status || 500);
   res.send({msg:err.message})
 });
 
-module.exports = app;
-
 const mongoose = require('mongoose')
 const User = require('./models/users')
 // console.log(User);
 
-mongoose.connect('mongodb://localhost:27017/nemv', {useNewUrlParser: true}, (err) => {
+console.log(`${process.env.NODE_ENV} started!`)
+
+const cfg = require('../config')
+console.log(cfg)
+
+mongoose.connect(cfg.dbUrl, {useNewUrlParser: true}, (err) => {
   if(err) {
     return console.error(err)
   }
@@ -59,14 +62,14 @@ mongoose.connect('mongodb://localhost:27017/nemv', {useNewUrlParser: true}, (err
 //   .catch(e => console.error(e));
 // User.updateOne({_id: '5d0701c30bdd0c0a4c1ff742'}, {$set: {age: 34}})
 //   .then(r => {
-//     console.log(r)
-//     console.log('updated')
-//     return User.find()
-//   })
-//   .then(r => console.log(r))
-//   .catch(e => console.error(e));
-// User.deleteOne({name:'하하'})
-//   .then(r => console.log(r))
-//   .catch(e => console.error(e));
-
-console.log(process.env.NODE_ENV)
+  //     console.log(r)
+  //     console.log('updated')
+  //     return User.find()
+  //   })
+  //   .then(r => console.log(r))
+  //   .catch(e => console.error(e));
+  // User.deleteOne({name:'하하'})
+  //   .then(r => console.log(r))
+  //   .catch(e => console.error(e));
+  
+  module.exports = app;

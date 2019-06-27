@@ -15,7 +15,7 @@ module.exports = {
 
   deploy : {
     pr : {
-      user : 'root',
+      user : 'centos',
       host : '133.186.146.89',
       key  : '~/keys/nemvKey.pem',
       ref  : 'origin/master',
